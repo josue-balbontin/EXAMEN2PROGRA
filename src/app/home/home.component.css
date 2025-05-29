@@ -1,0 +1,19 @@
+.cartas{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.carta{
+    width: 600px;
+    height: 200px;
+    background-color: #9bc4ee;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    text-align: left;
+}

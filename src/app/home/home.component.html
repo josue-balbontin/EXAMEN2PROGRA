@@ -1,0 +1,31 @@
+<div class="cartas">
+    @for (item of ideas; track $index ; let indice = $index) {
+       @if (!item.Estado.borrado) {
+                    
+          
+        <div class="carta" >
+            <div class="carta-content">
+                <h2>{{ item.titulo }}</h2>
+                <p>{{ item.descripcion }}</p>
+                <p>Categorias : {{item.Categoria.join(', ')}}</p>
+                
+                @if (item.Estado.validando) {
+                    <p>Esta idea está siendo validada.</p>
+                }
+                @else if (item.Estado.descartada) {
+                    <p>Esta idea ha sido descartada.</p>
+                }
+            <button (click)="eliminarIdea(indice)">eliminar</button>
+            <button (click)="editarf(indice)">editar</button>
+            </div>
+        </div>
+        }
+
+        @if(editar()){
+            <app-editar [indice]="indice"
+                [boton]="editar" ></app-editar>
+        }
+    }
+</div>
+
+
